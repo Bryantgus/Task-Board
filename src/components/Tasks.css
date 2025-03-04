@@ -1,0 +1,101 @@
+.tasksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/*Styles TaskItem Component */ 
+
+.taskItem {
+    cursor: pointer;
+    width: 550px;
+    height: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.headerItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.imgContainer {
+    width: 45px;
+    height: 45px;
+    background-color: #F8FAFC;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgL {
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.imgR {
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+h2 {
+    margin-left: 20px;   
+    font-size: 20px; 
+    font-weight: 600;
+}
+
+.img2 {
+    margin-left: auto;
+}
+
+.descriptionContainer {
+    width: 300px;
+    margin-left: 66px;
+    margin-top: 2px;
+}
+
+.description {
+    word-wrap: break-word;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+/*Styles AddItem Component */ 
+
+.addItem {
+    background-color: #F5E8D5;
+    flex-direction: row;
+    align-items: center;
+}
+
+.addItemSquare {
+    background-color: #E9A23B;
+    
+}
+
+.addItem h2 {
+    font-size: 16px;
+}
+
+@media(max-width: 629px) {
+    .tasksContainer {
+        width: 100%;
+    }
+
+    .taskItem {
+        width: 100%;
+    }
+}   

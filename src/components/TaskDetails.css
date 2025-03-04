@@ -1,0 +1,41 @@
+.square {
+  width: 500px;
+  height: 600px;
+  background-color: #3498db;
+  position: absolute;
+  top: 50%;
+  right: -100px; /* Comienza fuera del viewport (a la derecha) */
+  transform: translateY(-50%); /* Centra verticalmente */
+  animation-duration: 1s; /* Duración de la animación */
+  animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+} 
+
+/* Animación de entrada (mostrar) */
+@keyframes slideIn {
+  from {
+    right: -101%; /* Fuera del viewport */
+  }
+  to {
+    right: 10px; /* Dentro del viewport */
+  }
+}
+
+/* Animación de salida (ocultar) */
+@keyframes slideOut {
+  from {
+    right: 10px; /* Dentro del viewport */
+  }
+  to {
+    right: -101%; /* Fuera del viewport */
+  }
+}
+
+/* Aplica la animación de entrada */
+.square {
+  animation-name: slideIn;
+}
+
+/* Aplica la animación de salida */
+.square.exiting {
+  animation-name: slideOut;
+}

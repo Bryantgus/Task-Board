@@ -1,0 +1,48 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 40px;
+
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.title div {
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
+
+.title div:first-child {
+    width: 50px;
+    height: 50px;
+    background-image: url("/Logo.webp");
+}
+
+
+.title div:last-child {
+    width: 30px;
+    height: 30px;
+    background-image: url("/Edit_duotone.webp");
+}
+
+.headerContainer p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 60px;
+    margin-top: 10px;
+}
