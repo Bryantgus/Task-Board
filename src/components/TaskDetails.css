@@ -1,15 +1,21 @@
 .square {
   width: 500px;
   height: 600px;
-  background-color: #3498db;
+  background-color: #F8FAFC;
   position: absolute;
-  top: 50%;
+  top: 5%;
   right: -500px;
-  transform: translateY(-50%); 
   animation-duration: 1s;
-  animation-fill-mode: forwards; 
-} 
-
+  animation-fill-mode: forwards;
+  border-radius: 15px;
+  border: 0.1px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 15px;
+  padding-right: 20px;
+  gap: 10px;
+}
 
 @keyframes slideIn {
   from {
@@ -20,13 +26,12 @@
   }
 }
 
-/* Animación de salida (ocultar) */
 @keyframes slideOut {
   from {
     right: 10px; /* Dentro del viewport */
   }
   to {
-    right: -101%; /* Fuera del viewport */
+    right: -600px; /* Fuera del viewport */
   }
 }
 
@@ -38,4 +43,160 @@
 /* Aplica la animación de salida */
 .square.exiting {
   animation-name: slideOut;
+}
+
+.square > span, label {
+  display: block;
+  font-size: 12px;
+  color: #97A3B6;
+}
+
+.statusContainer > span {
+  display: block;
+  font-size: 12px;
+  color: #97A3B6;
+}
+
+.square input::placeholder {
+  color: #97A3B6;
+}
+
+.headerTD {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.headerTD h3 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.closeImg {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/closeYellow.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.nameContainer input {
+  width: 100%;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 14px;
+  border-radius: 7px;
+  border: 1px #00000033 solid;
+  margin-top: 2px;
+}
+
+.nameContainer input[type="text"]:focus, textarea:focus {
+  border: 2px solid #3662E3;
+  outline: none;
+}
+
+.descriptionCtn textarea {
+  width: 100%;
+  height: 190px;
+  padding-left: 10px;
+  font-size: 14px;
+  border-radius: 7px;
+  border: 1px #00000033 solid;
+  margin-top: 2px;
+  text-align:start;
+  vertical-align: top;
+  padding-top: 10px;
+  resize: none;
+  
+}
+
+.descriptionCtn textarea:focus {
+  border: 2px solid #3662E3;
+  outline: none;
+}
+
+
+.iconsItemContainer {
+  display: flex;
+  gap: 15px;
+}
+.icon {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-color: #E3E8EF;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 3px;
+  padding: 10px;
+
+}
+
+@media (max-width: 624px) {
+  .square {
+    width: 95%;
+    height: 90%;
+    
+  }
+}
+
+/*StatusItem */
+.itemsStatus {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  row-gap: 10px;
+}
+.statusItemContainer {
+  cursor: pointer;
+  width: 97%;
+  height: 40px;
+  border-radius: 10px;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.statusItemContainer > span {
+  width: 65%;
+}
+
+.statusContainer > span {
+  margin-bottom: 2px;
+}
+
+.squareStatus {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-left: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.imgSquareStatus {
+  width: 18px;
+  height: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.check {
+  background-color: #3662E3;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  background-image: url("../assets/done1.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
 }
