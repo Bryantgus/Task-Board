@@ -46,9 +46,12 @@ const defaultItems = [
 
 ]
 
-function TaskItem({bg, title, description, bgSquare, imgL, imgR}) {
+function TaskItem({bg, title, description, bgSquare, imgL, imgR, showDetails}) {
     return (
-        <div className="taskItem" style={{backgroundColor: bg}}>
+        <div className="taskItem" style={{backgroundColor: bg}} 
+            onClick={() => showDetails(
+                title, description, imgR, imgL
+            )}>
 
             <div className="headerItem">
                 <div className="imgContainer img1">
@@ -89,7 +92,7 @@ function AddItem() {
     )
 }
 
-export default function Tasks() {
+export default function Tasks({showDetails}) {
     return (
         <div className="tasksContainer">
             {defaultItems.map((item, index) => 
@@ -101,6 +104,7 @@ export default function Tasks() {
                     bgSquare={item.bgSquare}
                     imgL={item.imgL}
                     imgR={item.imgR}
+                    showDetails={showDetails}
                     />)}
                 
                 <AddItem />
