@@ -5,7 +5,7 @@
   position: absolute;
   top: 5%;
   right: -500px;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-fill-mode: forwards;
   border-radius: 15px;
   border: 0.1px solid gray;
@@ -118,22 +118,27 @@
   outline: none;
 }
 
-
+.iconContainer {
+  width: 40px;
+  height: 40px;
+  background-color: #E3E8EF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
 .iconsItemContainer {
   display: flex;
   gap: 15px;
 }
 .icon {
   cursor: pointer;
-  width: 25px;
-  height: 25px;
-  background-color: #E3E8EF;
+  width: 30px;
+  height: 30px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 3px;
-  padding: 10px;
-
 }
 
 @media (max-width: 624px) {
@@ -160,6 +165,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  border: 1px solid #E3E8EF;
 }
 
 .statusItemContainer > span {

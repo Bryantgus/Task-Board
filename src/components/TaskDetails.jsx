@@ -34,20 +34,16 @@ function StatusItem({id, img, bg, title, check, changeCheck}) {
 }
 
 export default function TaskDetails({ isExiting, data, closeAnimation }) {
-  const [statusSelected, setStatusSelected] = useState(3);
+  const [statusSelected, setStatusSelected] = useState();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  
+
   useEffect(() => {
     setTitle(data.title);
     setDescription(data.description);
+  },[data]);
 
-    return () => {setTitle(""), setDescription("")}
-  },[])
-
-  function changeSelectedItem(id) {
-    console.log(data);
-    
+  function changeSelectedItem(id) {   
     setStatusSelected(id)
   }
   return (
@@ -68,17 +64,19 @@ export default function TaskDetails({ isExiting, data, closeAnimation }) {
           <textarea id="dp" type="text" placeholder="Enter a short description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
         </div>
 
-        <div className="iconContainer"></div>
-          <span>Icon</span>
-          <div className="iconsItemContainer">
-            {listOfIcons.map((item, index) => (
-              <div
-                key={index}
-                style={{backgroundImage: `url(${item})`}}
-                alt={`Icon ${index}`}
-                className="icon"  
-              />
-            ))}
+        <span>Icon</span>
+        
+        <div className="iconsItemContainer">
+          {listOfIcons.map((item, index) => (
+            <div className="iconContainer" key={index}>
+            <div
+              key={index}
+              style={{backgroundImage: `url(${item})`}}
+              alt={`Icon ${index}`}
+              className="icon"  
+            />
+            </div>
+          ))}
         </div>
 
         <div className="statusContainer">
@@ -86,8 +84,8 @@ export default function TaskDetails({ isExiting, data, closeAnimation }) {
 
           <div className="itemsStatus">
             <StatusItem img={time} bg={"#E9A23B"} title={"In Progress"} check={statusSelected} id={1} changeCheck={changeSelectedItem}/>
-            <StatusItem img={time} bg={"#32D657"} title={"Completed"} check={statusSelected} id={2} changeCheck={changeSelectedItem}/>
-            <StatusItem img={time} bg={"#DD524C"} title={"Won't do"} check={statusSelected} id={3} changeCheck={changeSelectedItem}/>
+            <StatusItem img={done1} bg={"#32D657"} title={"Completed"} check={statusSelected} id={2} changeCheck={changeSelectedItem}/>
+            <StatusItem img={close} bg={"#DD524C"} title={"Won't do"} check={statusSelected} id={3} changeCheck={changeSelectedItem}/>
           </div>
           
         </div>

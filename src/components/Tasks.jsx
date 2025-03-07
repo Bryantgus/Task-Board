@@ -93,6 +93,8 @@ function AddItem() {
 }
 
 export default function Tasks({showDetails}) {
+
+    
     return (
         <div className="tasksContainer">
             {defaultItems.map((item, index) => 

@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Tasks from './components/Tasks';
 import TaskDetails from "./components/TaskDetails";
 import UserIdComponent from './hooks/UserIdComponent';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const userId = UserIdComponent(); 
@@ -11,43 +11,42 @@ export default function App() {
   const [InOnAnimation, setInOnAnimation] = useState(false);
   const [taskData, setTaskData] = useState({});
 
+  useEffect(() => {
+    console.log(taskData);
+  },[taskData]);
+
   function details(id, title, description, imgL, imgR) {  
-    console.log(description)
     const isEmpty = Object.keys(taskData).length === 0;
-    if (id === taskData.id) return;
+    const data = {
+      id: id,
+      title: title,
+      description: description,
+      icon: imgL,
+      status: imgR
+    }
+    if (InOnAnimation) {
+      if (id === taskData.id) {setShowDetails(true)};
+    }
+    
     if (isEmpty) {
-      setTaskData({
-        id: id,
-        title: title,
-        description: description,
-        icon: imgL,
-        stauts: imgR});
+      setTaskData(data);
       setShowDetails(true);
       setInOnAnimation(false);
     } else {
       setInOnAnimation(true);
       setTimeout(() => {
-        setTaskData({id: id});
+        setTaskData(data);
         setInOnAnimation(false);
-      }, 1000);
+      }, 800);
     }
-  }
-
-  function closeAnimation() {
-    setInOnAnimation(true);
-    setTimeout(() => {
-      setTaskData({});
-      setShowDetails(false);
-      setInOnAnimation(false);
-      setTaskData({});
-    }, 1000);
+    
   }
 
   return (
     <div className="appContainer">
       <Header />
       <Tasks showDetails={details} />
-      {showDetails && <TaskDetails isExiting={InOnAnimation} data={taskData} closeAnimation={closeAnimation} />}
+      {showDetails && <TaskDetails isExiting={InOnAnimation} data={taskData} closeAnimation={() => setInOnAnimation(true)} />}
     </div>
   );
 }
