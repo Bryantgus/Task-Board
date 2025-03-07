@@ -2,11 +2,11 @@ import "./App.css";
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import TaskDetails from "./components/TaskDetails";
-import UserIdComponent from './hooks/UserIdComponent';
+
 import { useEffect, useState } from "react";
 
 export default function App() {
-  const userId = UserIdComponent(); 
+
   const [showDetails, setShowDetails] = useState(false);
   const [InOnAnimation, setInOnAnimation] = useState(false);
   const [taskData, setTaskData] = useState({});

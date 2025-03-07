@@ -206,3 +206,49 @@
   background-size: cover;
   margin: auto;
 }
+
+.btnsContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 65px;
+  gap: 10px;
+}
+
+.btnSend {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-evenly;
+  width: 90px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.btnSend > div:first-child {
+  font-size: 12px;
+  color: #F5E8D5;
+}
+
+.btn1 {
+  background-color: #97A3B6;
+}
+
+.btn2 {
+  background-color: #3662E3;
+}
+
+.imgbtn {
+  width: 15px;
+  height: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.done1 {
+  background-image: url("../assets/Trash.webp");
+}
+
+.done2 {
+  background-image: url("../assets/done1.webp");
+}

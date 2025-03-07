@@ -88,6 +88,19 @@ export default function TaskDetails({ isExiting, data, closeAnimation }) {
             <StatusItem img={close} bg={"#DD524C"} title={"Won't do"} check={statusSelected} id={3} changeCheck={changeSelectedItem}/>
           </div>
           
+          <div className="btnsContainer">
+
+            <div className="btnSend btn1">
+              <div>Delete</div>
+              <div className="imgbtn done1"></div>
+            </div>
+            
+            <div className="btnSend btn2">
+              <div>Save</div>
+              <div className="imgbtn done2"></div>
+            </div>
+
+          </div>
         </div>
 
       </div>
